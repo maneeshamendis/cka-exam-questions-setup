@@ -13,3 +13,8 @@
 This repository contains carefully crafted practice questions to help you prepare for the **Certified Kubernetes Administrator (CKA)** exam. Each folder is structured to provide a hands-on learning experience.
 
 ### 📁 Repository Structure
+📦 CKA-Practice
+┣ 📂 [Topic Name]/
+┃ ┣ 📜 QUESTION.md # Practice question/task
+┃ ┣ 📜 ANSWER.yaml # Solution YAML file
+┃ ┗ 📜 SOLUTION.md # Step-by-step explanation
