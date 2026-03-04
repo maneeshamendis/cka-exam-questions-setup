@@ -33,8 +33,13 @@ Save the existing `nginx-config` ConfigMap to a YAML file:
 
 ```bash
 kubectl get configmap nginx-config -n nginx-static -oyaml > cm.yaml
+```
 
-Edit the YAML fileOpen cm.yaml in a text editor and make the following changes:Remove all annotations (the entire annotations block under metadata). This ensures the ConfigMap can be replaced cleanly.Add TLSv1.2 to the ssl_protocols line inside the nginx.conf data.The relevant part of the file should look like this after editing: Code data:
+### 2️⃣ Edit the YAML file
+
+Open cm.yaml in a text editor and make the following changes:Remove all annotations (the entire annotations block under metadata). This ensures the ConfigMap can be replaced cleanly.Add TLSv1.2 to the ssl_protocols line inside the nginx.conf data.The relevant part of the file should look like this after editing: 
+```bash
+data:
   nginx.conf: |
     events {
         worker_connections 1024;
@@ -53,5 +58,8 @@ Edit the YAML fileOpen cm.yaml in a text editor and make the following changes:R
                 index index.html;
             }
         }
-    }⚠️ Important: Keep a space between TLSv1.2 and TLSv1.3.
+    }
+```
+⚠️ Important: Keep a space between TLSv1.2 and TLSv1.3.
+
 
