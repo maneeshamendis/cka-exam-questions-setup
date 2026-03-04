@@ -62,4 +62,27 @@ data:
 ```
 ⚠️ Important: Keep a space between TLSv1.2 and TLSv1.3.
 
+### 3️⃣ Replace the ConfigMapApply the updated configuration:
+```bash
+kubectl replace -f cm.yaml
+```
+
+### 4️⃣ Restart the Deployment
+```bash
+kubectl rollout restart deployment nginx-static -n nginx-static
+```
+### ✅ Verification
+Get the Service IPFind the ClusterIP of the NGINX service:
+```bash
+kubectl get svc -n nginx-static
+
+NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+nginx-service   ClusterIP   10.109.56.199   <none>        443/TCP   10m
+```
+
+```bash
+curl -k --tls-max 1.2 https://<SERVICE_IP>   # 👈 this command give to proper output insted of an ssl error. . . 
+```
+
+
 
