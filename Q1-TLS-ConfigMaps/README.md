@@ -40,7 +40,6 @@ Apply the `setup.yaml` file to create the initial resources:
 ```bash
 kubectl apply -f setup.yaml
 
-```bash
 # Generate certificate (run in your terminal)
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -keyout tls.key -out tls.crt \
