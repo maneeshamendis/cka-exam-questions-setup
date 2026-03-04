@@ -1,6 +1,6 @@
 <div align="center">
   
-# 🚀 CKA Exam Practice Labs
+# 🚀 CKA Exam Practice Questions and SETUP
   
 <p align="center">
   <img src="https://img.shields.io/badge/Kubernetes-CKA-blue?logo=kubernetes&logoColor=white&style=for-the-badge" alt="Kubernetes">
