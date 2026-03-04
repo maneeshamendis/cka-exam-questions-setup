@@ -19,7 +19,7 @@ This folder contains a hands-on scenario to practice **updating a ConfigMap** an
 - **Task**: Update the ConfigMap to **allow TLSv1.2 connections**.
 - Additionally, you need to create a TLS secret named `nginx-ssl` using provided certificates.
 
-After applying the changes, verify with a `curl -k --tls-max 1.2 https://<ur-cluster-ip>` command that only TLSv1.2 is accepted.
+After applying the changes, verify with a `curl -k --tls-max 1.2 https://<ur-cluster-ip>` command that only TLSv1.2 is accepted. NOTE: kubectl get svc -n nginx-static to get the cluster IP of the svc
 
 ---
 
