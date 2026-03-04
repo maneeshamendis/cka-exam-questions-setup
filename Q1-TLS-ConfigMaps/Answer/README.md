@@ -84,7 +84,6 @@ Wait for the new pods to be ready:
 
 bash
 kubectl rollout status deployment nginx-static -n nginx-static
-
 ✅ Verification
 Get the Service IP
 Find the ClusterIP of the NGINX service:
@@ -101,4 +100,3 @@ Use curl to verify that TLSv1.2 is accepted:
 
 bash
 curl -k --tls-max 1.2 https://<SERVICE_IP>
-
