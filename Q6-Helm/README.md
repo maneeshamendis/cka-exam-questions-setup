@@ -6,3 +6,5 @@ Configure the chart to not install CRDs.
 	
 https://argoproj.github.io/argo-helm 
 
+Now install argocd using the template you created ( Make sure crds are not getting installed. ) 
+
