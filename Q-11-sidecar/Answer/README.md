@@ -21,9 +21,9 @@ spec:
         app: synergy
     spec:
       containers:
-      - name: myapp
-        image: alpine:latest
-        command: ['/bin/sh', '-c', "tail -n+1 -f /var/log/synergy-leverager.log"]
+      - name: sidecar # 👈
+        image: busybox:latest  # 👈 
+        command: ['/bin/sh', '-c', "tail -n+1 -f /var/log/synergy-leverager.log"] # 👈
         volumeMounts:  # 👈
          - name: data  # 👈
            mountPath: /var/log # 👈
@@ -35,15 +35,15 @@ spec:
             echo "$(date) - Synergy leverager is running" >> /var/log/synergy-leverager.log
             sleep 5
           done
-        image: busybox # 👈
         volumeMounts: # 👈
          - name: data # 👈
            mountPath: /var/log # 👈
         imagePullPolicy: Always
-        name: sidecar  # 👈
+        name: logger
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       volumes:          # 👈
         - name: data    # 👈
           emptyDir: {}  # 👈
+
