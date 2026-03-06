@@ -22,3 +22,10 @@ spec:
     scaleDown:
       stabilizationWindowSeconds: 30
 ```
+```bash
+kubectl get hpa -n autoscale
+```
+```text
+NAME            REFERENCE                  TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+apache-server   Deployment/apache-server   cpu: <unknown>/50%   1         4         2          2m39s
+```
